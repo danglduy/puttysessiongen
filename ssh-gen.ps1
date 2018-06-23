@@ -35,7 +35,6 @@ Reg Import $sessionreg *>&1 | out-null
 Remove-Item -Path $sessionreg 
 $puttysshcontent = 'start '+$puttypath+' -ssh -load "'+$sessionname+'"'
 $puttysshfile = $sessionname + '.cmd'
-$puttysshcontent | Out-File -encoding ASCII $puttysshpath$puttysshfile 
-
+$puttysshcontent | Out-File -encoding ASCII $puttysshpath+'\'+$puttysshfile 
 
 
