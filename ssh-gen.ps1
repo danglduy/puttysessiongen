@@ -1,5 +1,4 @@
 $sessionname = Read-Host 'Your session name'
-$sessionname = $sessionname.replace(' ','')
 $IP = Read-Host 'IP'
 $IP = $IP.replace(' ','')
 
