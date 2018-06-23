@@ -19,9 +19,9 @@ $privatekeypath = $(pwd).Path+'\'+$privatekeyname
 
 
 # The path to putty session default template file.
-$defaultreg = $regpath+'default.reg'
+$defaultreg = $regpath+'\default.reg'
 # The path to putty session customized reg file.
-$sessionreg = $regpath+$sessionname+'.reg'
+$sessionreg = $regpath+'\'+$sessionname+'.reg'
 
 ### Do not edit below
 $privatekeypath -replace "\\", "\\"
