@@ -1,4 +1,5 @@
-﻿$sessionname = Read-Host 'Your session name'
+$sessionname = Read-Host 'Your session name'
+$sessionname.replace(' ','') *>&1 | out-null
 $IP = Read-Host 'IP'
 $IP.replace(' ','') *>&1 | out-null
 
@@ -24,7 +25,7 @@ $defaultreg = $regpath+'\default.reg'
 $sessionreg = $regpath+'\'+$sessionname+'.reg'
 
 ### Do not edit below
-$privatekeypath -replace "\\", "\\"
+$privatekeypath -replace "\\", "\\" | out-null
 
 (Get-Content $defaultreg)  | Foreach-Object { $_ -replace '\$IP',$IP`
                                                  -replace '\$sessionname',$sessionname`
@@ -35,6 +36,4 @@ Reg Import $sessionreg *>&1 | out-null
 Remove-Item -Path $sessionreg 
 $puttysshcontent = 'start '+$puttypath+' -ssh -load "'+$sessionname+'"'
 $puttysshfile = $puttysshpath+'\'+$sessionname + '.cmd'
-$puttysshcontent | Out-File -encoding ASCII $puttysshfile 
-
-
+$puttysshcontent | Out-File -encoding ASCII $puttysshfile
