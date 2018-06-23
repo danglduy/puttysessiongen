@@ -25,7 +25,7 @@ $defaultreg = $regpath+'\default.reg'
 $sessionreg = $regpath+'\'+$sessionname+'.reg'
 
 ### Do not edit below
-$privatekeypath -replace "\\", "\\" | out-null
+$privatekeypath.replace('\','\\') *>&1 | out-null
 
 (Get-Content $defaultreg)  | Foreach-Object { $_ -replace '\$IP',$IP`
                                                  -replace '\$sessionname',$sessionname`
