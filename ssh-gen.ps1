@@ -1,7 +1,7 @@
 $sessionname = Read-Host 'Your session name'
-$sessionname.replace(' ','') *>&1 | out-null
+$sessionname = $sessionname.replace(' ','')
 $IP = Read-Host 'IP'
-$IP.replace(' ','') *>&1 | out-null
+$IP = $IP.replace(' ','')
 
 
 ### Edit your variable here
