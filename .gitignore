@@ -1,0 +1,3 @@
+# Private keys will be ignored
+inc/*.ppk
+inc/*.pem
